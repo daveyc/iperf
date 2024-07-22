@@ -1,5 +1,5 @@
 // "License": Public Domain
-// I, Mathias Panzenböck, place this file hereby into the public domain. Use it at your own risk for whatever you like.
+// I, Mathias PanzenbÃ¶ck, place this file hereby into the public domain. Use it at your own risk for whatever you like.
 
 #ifndef PORTABLE_ENDIAN_H__
 #define PORTABLE_ENDIAN_H__
@@ -97,7 +97,7 @@
 
 #	elif BYTE_ORDER == BIG_ENDIAN
 
-		/* that would be xbox 360 */
+/* that would be xbox 360 */
 #		define htobe16(x) (x)
 #		define htole16(x) __builtin_bswap16(x)
 #		define be16toh(x) (x)
@@ -126,6 +126,8 @@
 
 #else
 
+
+
 // Unsupported platforms.
 // Intended to support CentOS 5 but hopefully not too far from
 // the truth because we use the homebrew htonll, et al. implementations
@@ -134,7 +136,13 @@
 #if (!defined(__vxworks)) && (!defined(__VXWORKS__))
 #	warning platform not supported
 #endif
+
+#if !defined(__MVS__)
 #	include <endian.h>
+#else
+#	include <sys/endian.h>
+#endif
+
 #if BYTE_ORDER == BIG_ENDIAN
 #define HTONLL(n) (n)
 #define NTOHLL(n) (n)

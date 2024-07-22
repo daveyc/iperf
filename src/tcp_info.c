@@ -45,7 +45,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#if !defined(__MVS__)
 #include <sys/param.h>
+#endif
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <string.h>

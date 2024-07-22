@@ -59,6 +59,9 @@
 #include <sys/types.h>
 #include <sys/time.h>
 
+#if defined(__MVS__)
+typedef unsigned char u_char;
+#endif
 
 #include "iperf.h"
 

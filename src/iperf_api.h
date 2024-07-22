@@ -47,6 +47,10 @@ extern "C" { /* open extern "C" */
 typedef u_int64_t atomic_uint_fast64_t;
 #endif // HAVE_STDATOMIC_H
 
+#if defined(__MVS__)
+#include <xti.h>
+#endif
+
 struct iperf_test;
 struct iperf_stream_result;
 struct iperf_interval_results;

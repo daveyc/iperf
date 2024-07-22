@@ -31,7 +31,7 @@ What is the history of iperf3, and what is the difference between iperf2 and ipe
 
   As of this writing (2024), both iperf2 and iperf3 are being actively
   (although independently) developed.  We recommend being familiar with
-  both tools, and use whichever tool’s features best match your needs.
+  both tools, and use whichever tools features best match your needs.
 
   A feature comparison of iperf2, iperf3, and nuttcp is available at:
   https://fasterdata.es.net/performance-testing/network-troubleshooting-tools/throughput-tool-comparision/
@@ -54,7 +54,7 @@ iperf3 parallel stream performance is much less than iperf2. Why?
   <https://fasterdata.es.net/performance-testing/network-troubleshooting-tools/iperf/multi-stream-iperf3/>`_
   to achieve faster speeds.
 
-I’m trying to use iperf3 on Windows, but having trouble. What should I do?
+Im trying to use iperf3 on Windows, but having trouble. What should I do?
   iperf3 is not officially supported on Windows, but iperf2 is. We
   recommend you use iperf2.
 
@@ -163,10 +163,10 @@ TCP throughput drops to (almost) zero during a test, what's going on?
   the sending side, which is known as TCP Segmentation offload (TSO)
   or in Windows as Large Send Offload (LSO). It seems that there are
   TSO/LSO implementations which for some reason ignore the reported
-  MSS and therefore don’t perform segmentation. In these cases, when
+  MSS and therefore dont perform segmentation. In these cases, when
   large packets are sent, e.g. the default iperf3 128KB (131,072
   bytes), iperf3 will show that data was sent in the first interval,
-  but since the packets don’t get to the server, no ack is received
+  but since the packets dont get to the server, no ack is received
   and therefore no data is sent in the following intervals. It may
   happen that after certain timeout the main CPU will re-send the
   packet by re-segmenting it, and in these cases data will get to the
@@ -177,10 +177,10 @@ TCP throughput drops to (almost) zero during a test, what's going on?
   The recommended solution in such a case is to disable TSO/LSO, at
   least on the relevant port. See for example:
   https://atomicit.ca/kb/articles/slow-network-speed-windows-10/. If
-  that doesn’t help then "Don't Fragment" TCP flag may be
+  that doesnt help then "Don't Fragment" TCP flag may be
   disabled. See for example:
   https://support.microsoft.com/en-us/help/900926/recommended-tcp-ip-settings-for-wan-links-with-a-mtu-size-of-less-than. However,
-  note that disabling the “Don’t Fragment” flag may cause other
+  note that disabling the Dont Fragment flag may cause other
   issues.
 
   To test whether TSO/LSO may be the problem, do the following:
@@ -211,7 +211,7 @@ What congestion control algorithms are supported?
 
     /sbin/sysctl net.inet.tcp.cc.available
 
-I’m using the ``--logfile`` option. How do I see file output in real time?
+Im using the ``--logfile`` option. How do I see file output in real time?
   Use the ``--forceflush`` flag.
 
 I'm using the --fq-rate flag, but it does not seem to be working. Why?
@@ -231,7 +231,7 @@ I managed to get a Windows executable built, but why do I get a BSOD on Windows 
 
   https://support.microsoft.com/en-us/help/2732673/-delayed-write-failed-error-message-when--pst-files-are-stored-on-a-ne
 
-Why can’t I run a UDP client with no server?
+Why cant I run a UDP client with no server?
   This is potentially dangerous, and an attacker could use this for a
   denial of service attack.  We don't want iperf3 to be an attack tool.
 

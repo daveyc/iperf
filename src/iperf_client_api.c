@@ -37,6 +37,10 @@
 #include <sys/uio.h>
 #include <arpa/inet.h>
 
+#if defined(__MVS__)
+#include <xti.h>
+#endif
+
 #include "iperf.h"
 #include "iperf_api.h"
 #include "iperf_util.h"
